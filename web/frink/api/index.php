@@ -118,11 +118,11 @@ function fnMercari($utils, $mercari) {
 
     $headers = [
         'Accept: application/json',
-        'User-Agent: Mercari_r/1482 (Android 22; ja; x86,armeabi-v7a; samsung SM-N9005 Build/5.1.1) DB/13',
+        'User-Agent: Mercari_r/1541 (Android 22; ja; x86,armeabi-v7a; samsung SM-N9005 Build/5.1.1) DB/13',
         'X-PLATFORM: android',
-        'X-APP-VERSION: 1482',
+        'X-APP-VERSION: 1541',
         'Accept-Encoding: gzip, deflate',
-        'Authorization: 2:7b1d004962472bdef1defb3347d1b9ce8d729bc76538760222dc7ac94cefe3ef'
+        'Authorization: 2:a858cdb9a4f5ee68a4b7d9430d92c788cd422d714bfb1f0ca85ec5647bc3ca00' // アクセストークン自動取得予定
     ];
 
     $response = $utils->request($url, $headers, 'GET');
@@ -163,16 +163,10 @@ function fnRakuma($utils, $rakuma) {
     header('Content-Type: application/json');
     echo json_encode(array('response' => $results));
 }
-/*
-if($_GET['website'] === 'mercari') {
+
+if($_GET['frimashop'] === 'mercari') {
     header('Content-Type: application/json');
     echo fnMercari($utils, $mercari);
-} else if($_GET['website'] === 'rakuma') {
-    header('Content-Type: application/json');
-    echo fnRakuma($utils, $rakuma);
-} else*/ if($_GET['frimashop'] === 'rakuma') {
-    header('Content-Type: application/json');
-    echo fnRakuma($utils, $rakuma);
 } else if($_GET['frimashop'] === 'rakuma') {
     header('Content-Type: application/json');
     echo fnRakuma($utils, $rakuma);
